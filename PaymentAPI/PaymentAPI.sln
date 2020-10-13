@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentAPI", "PaymentAPI.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentDomain", "..\PaymentDomain\PaymentDomain.csproj", "{839E9C74-5315-4DCC-89F6-80C44E160C25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentInfrastructure", "..\PaymentInfrastructure\PaymentInfrastructure.csproj", "{F6AB273C-EDDB-40B1-8DFA-6D15393A5C69}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{839E9C74-5315-4DCC-89F6-80C44E160C25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{839E9C74-5315-4DCC-89F6-80C44E160C25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{839E9C74-5315-4DCC-89F6-80C44E160C25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6AB273C-EDDB-40B1-8DFA-6D15393A5C69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6AB273C-EDDB-40B1-8DFA-6D15393A5C69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6AB273C-EDDB-40B1-8DFA-6D15393A5C69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6AB273C-EDDB-40B1-8DFA-6D15393A5C69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
