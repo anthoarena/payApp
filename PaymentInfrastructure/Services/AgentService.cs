@@ -5,5 +5,8 @@ using System.Text;
 
 namespace PaymentInfrastructure.Services {
     public class AgentService : IAgentService {
+        public string GenerateCommisionPayment() {
+            return "Generate Commission";
+        }
     }
 }

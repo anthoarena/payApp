@@ -4,5 +4,7 @@ using System.Text;
 
 namespace PaymentDomain.Interfaces {
     public interface IAgentService {
+
+        string GenerateCommisionPayment();
     }
 }
