@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using PaymentDomain.DomainObject;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
@@ -27,6 +29,22 @@ namespace PaymentAPITestProject {
             //Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);         
      
+        }
+
+
+        [Fact]
+        public async Task POST_ProcessPayment_ValidInputSuccess() {
+            // Arrange
+            var payment = new PaymentDTO() { };
+
+            var httpContent = new StringContent(JsonConvert.SerializeObject(payment), Encoding.UTF8, "application/json");
+
+            //Act
+            var response = await _client.PostAsync("api/payment", httpContent);
+
+            //Assert
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+
         }
     }
 }

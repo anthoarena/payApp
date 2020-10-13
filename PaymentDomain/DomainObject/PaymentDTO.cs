@@ -12,7 +12,7 @@ namespace PaymentDomain.DomainObject {
     }
 
     public class PaymentDTO {
-        public int paymentId { get; set; }
+        public int PaymentId { get; set; }
         public int MemberId { get; set; }
         public ProductType ProductType { get; set; }
         public int ProductId { get; set; }
