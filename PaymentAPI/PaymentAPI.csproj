@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PaymentDomain\PaymentDomain.csproj" />
+    <ProjectReference Include="..\PaymentInfrastructure\PaymentInfrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
