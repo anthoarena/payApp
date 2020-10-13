@@ -11,9 +11,10 @@ namespace PaymentInfrastructure.Services {
 
         private readonly PaymentContext _db;
 
-        private readonly IShippingService shippingService = new ShippingService();
-        private readonly IAgentService agentService = new AgentService();
-
+        private readonly IShippingService _shippingService = new ShippingService();
+        private readonly INotificationService _notificationService = new NotificationService();
+        private readonly IAgentService _agentService = new AgentService();
+        private readonly IMembershipService _membershipService = new MembershipService();
         public PaymentService(PaymentContext db) {
             _db = db;
 
@@ -29,11 +30,11 @@ namespace PaymentInfrastructure.Services {
         public void ProcessPayment(PaymentDTO paymentDto) {
             switch (paymentDto.ProductType) {
                 case ProductType.Book:
-                    BookProduct book = new BookProduct(paymentDto);
+                    BookProduct book = new BookProduct(paymentDto,_shippingService, _agentService);
                     book.ProcessPayments();
                     break;
                 case ProductType.Membership:
-                    MembershipProduct membership = new MembershipProduct(paymentDto);
+                    MembershipProduct membership = new MembershipProduct(paymentDto, _membershipService,_notificationService );
                     membership.ProcessPayments();
                     break;
                 case ProductType.Video:
@@ -41,7 +42,7 @@ namespace PaymentInfrastructure.Services {
                     video.ProcessPayments();
                     break;
                 case ProductType.PhysicalProduct:
-                    PhysicalProduct physicalProduct = new PhysicalProduct(paymentDto, shippingService, agentService);
+                    PhysicalProduct physicalProduct = new PhysicalProduct(paymentDto, _shippingService, _agentService);
                     physicalProduct.ProcessPayments();
                     break;
             }

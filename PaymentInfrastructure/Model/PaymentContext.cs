@@ -15,7 +15,8 @@ namespace PaymentInfrastructure.Model {
 
         public DbSet<Member> Members { get; set; }
         public DbSet<Payment> Payments { get; set; }
-
+        public  DbSet<Book> Books { get; set; }
+        public  DbSet<Membership> Memberships { get; set; }
         public Member AddMember(Member member) {
             Members.Add(member);
             SaveChanges();
