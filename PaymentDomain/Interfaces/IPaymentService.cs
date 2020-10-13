@@ -4,5 +4,6 @@ using System.Text;
 
 namespace PaymentDomain.Interfaces {
     public interface IPaymentService {
+        IEnumerable<string> GetProductTypes();
     }
 }

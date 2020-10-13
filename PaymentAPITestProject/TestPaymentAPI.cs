@@ -19,14 +19,12 @@ namespace PaymentAPITestProject {
         }
 
         [Fact]
-        public async Task Get_Payment_ID_ValidInputSuccess() {
-            //Arrange
-            int paymentId = 1;
+        public async Task Get_ProductTypes_ValidInputSuccess() {
 
             //Act
-            var response = await _client.GetAsync($"api/payment/{paymentId}");
+            var response = await _client.GetAsync($"api/payment/producttypes");
 
-            //Assert1
+            //Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
     }
