@@ -20,6 +20,7 @@ namespace PaymentAPI.Controllers {
 
 
         [HttpGet]
+        [Route("producttypes")]
         public IActionResult ProductTypes() {
             var response =_paymentService.GetProductTypes();
             return Ok(response);

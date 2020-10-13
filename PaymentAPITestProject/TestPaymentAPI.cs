@@ -20,12 +20,13 @@ namespace PaymentAPITestProject {
 
         [Fact]
         public async Task Get_ProductTypes_ValidInputSuccess() {
-
+          
             //Act
             var response = await _client.GetAsync($"api/payment/producttypes");
 
             //Assert
-            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);         
+     
         }
     }
 }

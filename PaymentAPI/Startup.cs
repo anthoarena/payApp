@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PaymentDomain.Interfaces;
+using PaymentInfrastructure.Services;
 
 namespace PaymentAPI {
     public class Startup {
@@ -15,6 +17,12 @@ namespace PaymentAPI {
 
         public void ConfigureServices(IServiceCollection services) {
 
+            services.AddScoped<IPaymentService, PaymentService>();
+            services.AddScoped<INotificationService, NotificationService>();
+            services.AddScoped<IAgentService, AgentService>();
+            services.AddScoped<IMembershipService, MembershipService>();
+            services.AddScoped<IShippingService, ShippingService>();
+            
             services.AddControllers();
         }
 
